@@ -21,5 +21,5 @@ SELECT
 	,ROUND(s.quantity*CAST(p.purchSE_PRICE AS FLOAT64),2) AS purchase_cost
 	-- margin --
 	,s.revenue - s.quantity*CAST(p.purchSE_PRICE AS FLOAT64) AS margin
-FROM sales s
+FROM sales AS s
 INNER JOIN product p ON s.pdt_id = p.products_id
